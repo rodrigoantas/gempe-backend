@@ -1,0 +1,31 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Pichau\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js init
+
+PATH: 
+  C:\Users\Pichau\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Pichau\bin;C:\Python27;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Pichau\AppData\Local\Microsoft\WindowsApps;C:\Users\Pichau\AppData\Roaming\npm;C:\Users\Pichau\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Pichau\AppData\Local\Yarn\bin;C:\Users\Pichau\Desktop\programacao\Instalacoes\Android\Sdk\emulator;C:\Users\Pichau\Desktop\programacao\Instalacoes\Android\Sdk\tools;C:\Users\Pichau\Desktop\programacao\Instalacoes\Android\Sdk\tools\bin;C:\Users\Pichau\Desktop\programacao\Instalacoes\Android\Sdk\platform-tools;C:\Users\Pichau\AppData\Local\.meteor;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.19.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: Can't answer a question unless a user TTY
+      at ConsoleReporter.question (C:\Users\Pichau\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:96361:59)
+      at Object.<anonymous> (C:\Users\Pichau\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:88636:38)
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Pichau\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\Pichau\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
