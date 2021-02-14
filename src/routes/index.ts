@@ -9,7 +9,7 @@ import ClickPostService from '../services/ClickPostService';
 
 const routes = Router();
 
-routes.get('/posts/', async (request, response) => {
+routes.get('/post/', async (request, response) => {
   try {
 
     const { search } = request.query;
@@ -30,7 +30,7 @@ routes.get('/posts/', async (request, response) => {
 
 })
 
-routes.get('/posts/clique/:id', async (request, response) => {
+routes.get('/post/clique/:id', async (request, response) => {
   try {
 
     const { id } = request.params
