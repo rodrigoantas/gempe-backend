@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "devall.com.br",
+  "port": 3306,
+  "username": "testolino",
+  "password": "testolirico",
+  "database": "teste",
+  "insecureAuth": true,
+  "entities": [
+    "./src/models/*.ts"
+  ]
+}
