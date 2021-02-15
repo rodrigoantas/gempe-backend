@@ -20,20 +20,16 @@ class BlogPostsRepository {
    
 
   public async findAllPostsWithSearchQuery(searchQuery: string) {
-    if (searchQuery){
+    
       const postsWithSearchQuery = await this.ormRepository.find({where: [
         {titulo: Like(`%${searchQuery}%`)},
         {resumo: Like(`%${searchQuery}%`)},
-      ], order: {data_publicacao: 'DESC' }})
+      ], order: {data_publicacao: 'DESC' }, take: 20})
 
 
 
       return postsWithSearchQuery
-    } else {
-      const allPosts = await this.ormRepository.find({order: {data_publicacao: 'DESC'}})
-
-    return allPosts;
-    }
+    
 
     
   }
