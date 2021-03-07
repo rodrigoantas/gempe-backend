@@ -1,50 +1,121 @@
 import {Router} from 'express';
 
-import ListAllPostsService from '../services/ListAllPostsService';
-import ClickPostService from '../services/ClickPostService';
-
-
+import ListAllPeopleService from '../services/ListAllPeopleService'
+import CreatePersonService from '../services/CreatePersonService'
+import ListPersonService from '../services/ListPersonService'
+import UpdatePersonService from '../services/UpdatePersonService'
+import DeletePersonService from '../services/DeletePersonService'
 
 
 
 const routes = Router();
 
-routes.get('/post/', async (request, response) => {
+routes.post('/people', async (request, response) => {
+  try {
+    const {name, email, phone } = request.body;
+
+    const createPersonService = new CreatePersonService();
+
+    const person = await createPersonService.execute({ email, name, phone })
+
+    return response.status(201).json(person)
+
+  } catch (err) {
+
+    return response.status(400).json({ error: err.message });
+
+  }
+})
+
+routes.get('/people', async (request, response) => {
   try {
 
-    const { search } = request.query;
+    const {q} = request.query
 
-   const listAllPostsService = new ListAllPostsService();
-
-   const allPostsList = await listAllPostsService.execute(String(search));
+    const listAllPeopleService = new ListAllPeopleService();
 
 
-   return response.json(allPostsList);
+    const peopleList = await listAllPeopleService.execute(String(q));
+
+
+    return response.json(peopleList);
 
 
   } catch(err) {
 
-    console.log(err)
+    return response.status(400).json({ error: err.message });
 
   }
 
 })
 
-routes.get('/post/clique/:id', async (request, response) => {
+routes.get('/people/:id', async (request, response) => {
   try {
 
     const { id } = request.params
 
-    const clickPostService = new ClickPostService();
-
-   const post = await clickPostService.execute(id);
-
-   return response.json(post);
+    const listPersonService = new ListPersonService();
 
 
-  } catch (err) {
-    console.log(err)
+    const person = await listPersonService.execute(id);
+
+
+    return response.json(person);
+
+
+  } catch(err) {
+
+    return response.status(400).json({ error: err.message });
+
   }
+
+})
+
+routes.put('/people/:id', async (request, response) => {
+  try {
+
+    const { id } = request.params
+
+    const { email, phone, name } = request.body
+
+    const updatePersonService = new UpdatePersonService();
+
+
+    const person = await updatePersonService.execute({id , email, phone, name});
+
+
+    return response.json(person);
+
+
+  } catch(err) {
+
+    return response.status(400).json({ error: err.message });
+
+  }
+
+})
+
+routes.delete('/people/:id', async (request, response) => {
+  try {
+
+    const { id } = request.params
+
+
+    const deletePersonService = new DeletePersonService();
+
+
+    const person = await deletePersonService.execute(id);
+
+
+    return response.status(204).json();
+
+
+  } catch(err) {
+
+    return response.status(400).json({ error: err.message });
+
+  }
+
 })
 
 export default routes;

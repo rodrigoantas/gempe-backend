@@ -1,11 +1,9 @@
 {
-  "type": "mysql",
-  "host": "devall.com.br",
-  "port": 3306,
-  "username": "testolino",
-  "password": "testolirico",
-  "database": "teste",
-  "insecureAuth": true,
+  "type": "mongodb",
+  "host": "localhost",
+  "port": 27017,
+  "database": "mongodbgempe",
+  "useUnifiedTopology": true,
   "entities": [
     "./src/models/*.ts"
   ]
